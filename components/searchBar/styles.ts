@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import Theme from 'styles/theme';
-import { mainToWhite, shadowSearch } from 'styles/animations';
+import { mainToWhiteNotInfinte, shadowSearch } from 'styles/animations';
 
 export const Container = styled.section`
   width: 100%;
@@ -25,6 +25,9 @@ export const SearchContainer = styled.section`
   width: 400px;
   display: flex;
   justify-content: center;
+  @media ${Theme.mediaQueries.mobile} {
+    width: 100%;
+  }
 `;
 
 export const SearchLabel = styled.label`
@@ -46,7 +49,7 @@ export const SearchInput = styled.input`
   }
 `;
 
-export const SearchButton = styled.button`
+export const MockButton = styled.button`
   background: none;
   color: inherit;
   border: none;
@@ -58,8 +61,9 @@ export const SearchButton = styled.button`
   color: ${Theme.colors.white};
   padding: 8px 12px;
   border-radius: 4px;
+  margin-bottom: 8px;
 
   :hover {
-    ${mainToWhite}
+    ${mainToWhiteNotInfinte}
   }
 `;

@@ -14,3 +14,20 @@ export type MovieResultType = {
   resultType: string;
   title: string;
 };
+
+export type TopMoviesType = {
+  errorMessage: string | null;
+  items: TopMovieType[];
+};
+
+export type TopMovieType = {
+  crew: string;
+  fullTitle: string;
+  id: ID;
+  imDbRating: string;
+  imDbRatingCount: string;
+  image: string;
+  rank: string;
+  title: string;
+  year: string;
+};

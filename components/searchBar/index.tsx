@@ -5,18 +5,30 @@ import {
   SearchLabel,
   SearchInput,
   SearchContainer,
-  SearchButton,
+  MockButton,
 } from './styles';
 
 interface ISearchBar {
   setSearchInput: Dispatch<SetStateAction<string>>;
   searchInput: string;
+  setMockedValues: Dispatch<SetStateAction<boolean>>;
+  mockedValues: boolean;
 }
 
-const SearchBar: FC<ISearchBar> = ({ setSearchInput, searchInput }) => {
+const SearchBar: FC<ISearchBar> = ({
+  setSearchInput,
+  searchInput,
+  setMockedValues,
+  mockedValues,
+}) => {
   return (
     <Container>
       <Title>Movie Finder.</Title>
+      {mockedValues && (
+        <MockButton onClick={() => setMockedValues(false)}>
+          Volver a componentes reales
+        </MockButton>
+      )}
       <SearchContainer>
         <SearchLabel>Movie Search</SearchLabel>
         <SearchInput
@@ -26,7 +38,6 @@ const SearchBar: FC<ISearchBar> = ({ setSearchInput, searchInput }) => {
             setSearchInput(String(value.target.value));
           }}
         ></SearchInput>
-        {/* <SearchButton onClick={() => {}}>Buscar</SearchButton> */}
       </SearchContainer>
     </Container>
   );

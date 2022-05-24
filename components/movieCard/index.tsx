@@ -1,17 +1,36 @@
 import React, { FC } from 'react';
 import Image from 'next/image';
-import { Card, ImgCont, InfoCont, Description, Title } from './style';
+import {
+  Card,
+  ImgCont,
+  InfoCont,
+  Description,
+  Title,
+  InfoColumn,
+} from './style';
 import { ID } from 'types/common.types';
 
 interface IMovieCard {
-  description: string;
+  description?: string;
   id: ID;
   image: string;
-  resultType: string;
+  resultType?: string;
   title: string;
+  crew?: string;
+  fullTitle?: string;
+  imDbRating?: string;
+  imDbRatingCount?: string;
+  rank?: string;
+  year?: string;
 }
 
-const MovieCard: FC<IMovieCard> = ({ image, title, description }) => {
+const MovieCard: FC<IMovieCard> = ({
+  image,
+  title,
+  description,
+  imDbRating,
+  year,
+}) => {
   return (
     <Card>
       <ImgCont>
@@ -25,7 +44,14 @@ const MovieCard: FC<IMovieCard> = ({ image, title, description }) => {
       </ImgCont>
       <InfoCont>
         <Title>{title}</Title>
-        <Description>{description}</Description>
+        {description ? (
+          <Description>{description}</Description>
+        ) : (
+          <InfoColumn>
+            <Description>imDb Rating: {imDbRating}</Description>
+            <Description>year: {year}</Description>
+          </InfoColumn>
+        )}
       </InfoCont>
     </Card>
   );

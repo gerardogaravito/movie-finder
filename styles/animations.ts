@@ -40,6 +40,12 @@ export const mainToWhite = ({
     animation-delay: ${delay};
   `;
 
+export const mainToWhiteNotInfinte = ({ time = '.5s', type = 'ease' } = {}) =>
+  css`
+    animation: ${time} ${mainToWhiteKeyframes} ${type};
+    animation-fill-mode: forwards;
+  `;
+
 const shadowEffectFrames = keyframes`
   from {
 box-shadow: 3px 5px ${Theme.colors.main};
