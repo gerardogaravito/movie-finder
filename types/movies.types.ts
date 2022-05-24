@@ -5,6 +5,7 @@ export type SearchResultType = {
   expression: string;
   results: MovieResultType[];
   searchType: string;
+  items?: TopMovieType[];
 };
 
 export type MovieResultType = {
@@ -18,6 +19,7 @@ export type MovieResultType = {
 export type TopMoviesType = {
   errorMessage: string | null;
   items: TopMovieType[];
+  results?: MovieResultType[];
 };
 
 export type TopMovieType = {
