@@ -1,7 +1,7 @@
 const theme = {
   colors: {
     main: '#FF452B',
-    white: '#f7eff0',
+    white: '#fff',
     black: '#212121',
     pink: '#ffdbd0',
     red: '#ff5000',
@@ -18,11 +18,11 @@ const theme = {
   },
 
   mediaQueries: {
-    mobile: `(max-width: '420px')`,
-    tablet: `(max-width: '620px')`,
-    miniDesktop: `(max-width: '920px')`,
-    littleDesktop: `(max-width:'1315px')`,
-    desktop: `(max-width: '1440px')`,
+    mobile: `(max-width: 420px)`,
+    tablet: `(max-width: 620px)`,
+    miniDesktop: `(max-width: 920px)`,
+    littleDesktop: `(max-width:1315px)`,
+    desktop: `(max-width: 1440px)`,
   },
 
   width: {

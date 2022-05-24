@@ -6,16 +6,18 @@ export default createGlobalStyle`
     margin: 0;
     padding: 0;
     font-family: ${Theme.fonts.font_system};
-  box-sizing: border-box;
-
+    box-sizing: border-box;
+  }
+  body {
+    background-color: ${Theme.colors.beige};
   }
   a {
   color: inherit;
   text-decoration: none;
-}
+  }
   h1 {
     font-size: ${Theme.fonts.h1};
-    font-weight: normal;
+    font-weight: bold;
   }
 	h2 {
     font-size: ${Theme.fonts.h2};
